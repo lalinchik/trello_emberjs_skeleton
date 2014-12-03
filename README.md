@@ -1,4 +1,4 @@
 Trello
 =====
 
-Clone of Trello using Ember.js.
+Skeleton of Ember App.
