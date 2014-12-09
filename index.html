@@ -20,14 +20,20 @@
 <script type="text/x-handlebars" data-template-name="lists">
   <section id="list-container" class="lists-container">
     <div class="row">
-  {{#each controller itemController="list"}}
-      <section class="list list-inline">
-      <h1>{{listName}}</h1>
-        <a {{action "removeList"}} class="hand">
-        <div class="remove remove-list"></div>
-        </a>
+      {{#each controller itemController="list"}}
+        <section class="list list-inline">
+          <h1>{{listName}}</h1>
+          {{#each card in cards}}
+            <div class="card">
+              <label>{{card.description}}</label>
+              <div {{action "deleteCard" card}} class="remove-small remove-card hand"></div>
+            </div>
+          {{/each}}
+          <a {{action "removeList"}} class="hand">
+            <div class="remove remove-list"></div>
+          </a>
         </section>
-  {{/each}}
+      {{/each}}
       <section class="list new-list list-inline">
         {{input type="text" value=listName action="createList" id="new-list" class="list-input" placeholder="New List"}}
       </section>
