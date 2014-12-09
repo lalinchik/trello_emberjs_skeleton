@@ -21068,7 +21068,7 @@ enifed("ember-routing-handlebars/helpers/link_to",
       `{{link-to}}` will use your application's Router to
       fill the element's `href` property with a url that
       matches the path to the supplied `routeName` for your
-      routers's configured `Location` scheme, which defaults
+      routes's configured `Location` scheme, which defaults
       to Ember.HashLocation.
 
       ### Handling current route

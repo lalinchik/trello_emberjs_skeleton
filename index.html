@@ -8,6 +8,34 @@
 </head>
 
 <body>
+<script type="text/x-handlebars" data-template-name="application">
+  <header>
+    <div class="row">
+  <h1 class="app-name left">Trello</h1>
+      </div>
+    </header>
+  {{outlet}}
+</script>
+
+<script type="text/x-handlebars" data-template-name="lists">
+  <section id="list-container" class="lists-container">
+    <div class="row">
+  {{#each controller itemController="list"}}
+      <section class="list list-inline">
+      <h1>{{listName}}</h1>
+        <a {{action "removeList"}} class="hand">
+        <div class="remove remove-list"></div>
+        </a>
+        </section>
+  {{/each}}
+      <section class="list new-list list-inline">
+        {{input type="text" value=listName action="createList" id="new-list" class="list-input" placeholder="New List"}}
+      </section>
+      </div>
+  </section>
+</script>
+
+
 
 
 
@@ -15,6 +43,13 @@
   <script src="js/libs/handlebars-v1.3.0.js"></script>
   <script src="js/libs/ember-1.8.1.js"></script>
   <script src="js/libs/ember-data-v1.0.0-beta.11.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/models/card.js"></script>
+  <script src="js/models/list.js"></script>
+  <script src="js/routes/lists-route.js"></script>
+  <script src="js/controllers/lists-controller.js"></script>
+  <script src="js/controllers/list-controller.js"></script>
 </body>
 
 
